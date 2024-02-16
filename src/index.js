@@ -9,7 +9,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 let corspolicy ={
-   origin: process.env.FrontendURI
+  origin: '*',
+  methods: ['POST', 'GET','PUT','DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }
 
 app.use(cors(corspolicy));
